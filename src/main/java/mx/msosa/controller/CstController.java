@@ -11,6 +11,8 @@ import mx.msosa.service.CstService;
 @RestController
 public class CstController {
 	
+	
+	// Autowiring dependency injection.
 	@Autowired
 	CstService service;
 	
@@ -21,8 +23,8 @@ public class CstController {
 	@GetMapping(value="translate/{word}", produces=MediaType.TEXT_PLAIN_VALUE)
 	public String pigLatin(@PathVariable("word") String englishWord) {
 		
+		// Call to service layer
 		return service.translateToPig(englishWord);
-		
 	}
 
 }
